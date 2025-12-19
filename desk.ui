@@ -1,0 +1,1116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1400</width>
+    <height>800</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1200</width>
+    <height>700</height>
+   </size>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QMainWindow {
+    background-color: #f5f7fa;
+}
+
+QWidget {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 16px;
+}
+
+QTabWidget::pane {
+    border: 1px solid #d1d9e6;
+    background-color: white;
+    border-radius: 8px;
+}
+
+QTabBar::tab {
+    background-color: #e8ebf0;
+    padding: 10px 20px;
+    margin-right: 2px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    color: #5a6576;
+    font-weight: 500;
+}
+
+QTabBar::tab:selected {
+    background-color: white;
+    color: #2c3e50;
+    border-bottom: 2px solid #3498db;
+    font-weight: 600;
+}
+
+QTabBar::tab:hover:!selected {
+    background-color: #f0f3f7;
+}
+
+QGroupBox {
+    border: 2px solid #e1e8ed;
+    border-radius: 8px;
+    margin-top: 10px;
+    padding-top: 15px;
+    font-weight: 600;
+    color: #2c3e50;
+    background-color: white;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    left: 15px;
+    padding: 0 10px 0 10px;
+    background-color: white;
+}
+
+QTableView {
+    background-color: white;
+    border: 1px solid #d1d9e6;
+    border-radius: 6px;
+    gridline-color: #e8ebf0;
+    selection-background-color: #3498db;
+    selection-color: white;
+    alternate-background-color: #f8fafc;
+}
+
+QTableView::item {
+    padding: 6px;
+}
+
+QTableView::item:selected {
+    background-color: #3498db;
+    color: white;
+}
+
+QHeaderView::section {
+    background-color: #2c3e50;
+    color: white;
+    padding: 8px;
+    border: none;
+    font-weight: 600;
+}
+
+QPushButton {
+    background-color: #3498db;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    padding: 10px 20px;
+    font-weight: 600;
+    min-height: 36px;
+    transition: all 0.3s ease;
+}
+
+QPushButton:hover {
+    background-color: #2980b9;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+}
+
+QPushButton:pressed {
+    background-color: #21618c;
+    transform: translateY(0);
+}
+
+QPushButton:disabled {
+    background-color: #bdc3c7;
+    color: #7f8c8d;
+}
+
+QComboBox {
+    border: 2px solid #d1d9e6;
+    border-radius: 6px;
+    padding: 8px 15px;
+    background-color: white;
+    min-height: 36px;
+    selection-background-color: #3498db;
+}
+
+QComboBox:hover {
+    border-color: #3498db;
+}
+
+QComboBox::drop-down {
+    border: none;
+    width: 30px;
+}
+
+QComboBox::down-arrow {
+    image: url(down_arrow.png);
+    width: 12px;
+    height: 12px;
+}
+
+QComboBox QAbstractItemView {
+    border: 1px solid #d1d9e6;
+    border-radius: 6px;
+    selection-background-color: #3498db;
+    selection-color: white;
+    background-color: white;
+}
+
+QLineEdit {
+    border: 2px solid #d1d9e6;
+    border-radius: 6px;
+    padding: 8px 12px;
+    background-color: white;
+    min-height: 36px;
+}
+
+QLineEdit:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+QLineEdit[placeholderText]:empty {
+    color: #95a5a6;
+}
+
+QLabel {
+    color: #2c3e50;
+    font-weight: 500;
+}
+
+QFrame[frameShape="4"] {
+    background-color: transparent;
+    border: none;
+}
+
+QMenuBar {
+    background-color: #2c3e50;
+    color: white;
+    padding: 5px;
+}
+
+QMenuBar::item {
+    padding: 8px 15px;
+    background-color: transparent;
+    border-radius: 4px;
+}
+
+QMenuBar::item:selected {
+    background-color: #3498db;
+}
+
+QStatusBar {
+    background-color: #ecf0f1;
+    color: #7f8c8d;
+    padding: 5px;
+}
+
+QCheckBox {
+    spacing: 8px;
+    color: #2c3e50;
+}
+
+QCheckBox::indicator {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #d1d9e6;
+    border-radius: 4px;
+}
+
+QCheckBox::indicator:checked {
+    background-color: #3498db;
+    border-color: #3498db;
+    image: url(check.png);
+}
+
+/* Специальные стили для кнопок операций */
+#insertFacilityButton, #insertAthleteButton, #insertResultButton {
+    background-color: #27ae60;
+}
+
+#insertFacilityButton:hover, #insertAthleteButton:hover, #insertResultButton:hover {
+    background-color: #219653;
+}
+
+#deleteFacilityButton, #deleteAthleteButton, #deleteResultButton {
+    background-color: #e74c3c;
+}
+
+#deleteFacilityButton:hover, #deleteAthleteButton:hover, #deleteResultButton:hover {
+    background-color: #c0392b;
+}
+
+#undoButton {
+    background-color: #e67e22;
+}
+
+#undoButton:hover {
+    background-color: #d35400;
+}
+
+#generateReportButton {
+    background-color: #9b59b6;
+}
+
+#generateReportButton:hover {
+    background-color: #8e44ad;
+}
+
+/* Стиль для кнопок очистки */
+#clearFacilityButton, #clearAthleteButton, #clearResultButton {
+    background-color: #95a5a6;
+}
+
+#clearFacilityButton:hover, #clearAthleteButton:hover, #clearResultButton:hover {
+    background-color: #7f8c8d;
+}
+
+/* Стиль для загрузочных кнопок */
+#loadTableButton, #loadAuditButton {
+    background-color: #3498db;
+    padding: 10px 25px;
+}
+
+/* Анимация при нажатии */
+@keyframes buttonClick {
+    0% { transform: scale(1); }
+    50% { transform: scale(0.97); }
+    100% { transform: scale(1); }
+}
+
+QPushButton:pressed {
+    animation: buttonClick 0.2s ease;
+}</string>
+  </property>
+  <property name="windowTitle">
+   <string>Спортивная База Данных</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <property name="tabPosition">
+       <enum>QTabWidget::North</enum>
+      </property>
+      <property name="tabShape">
+       <enum>QTabWidget::Rounded</enum>
+      </property>
+      <property name="documentMode">
+       <bool>false</bool>
+      </property>
+      <property name="tabsClosable">
+       <bool>false</bool>
+      </property>
+      <property name="movable">
+       <bool>false</bool>
+      </property>
+      <widget class="QWidget" name="viewTab">
+       <attribute name="title">
+        <string>  👁 Просмотр данных  </string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <widget class="QGroupBox" name="groupBox">
+          <property name="title">
+           <string>Выбор таблицы</string>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout">
+           <item>
+            <widget class="QLabel" name="label">
+             <property name="text">
+              <string>📊 Таблица:</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="tableComboBox">
+             <item>
+              <property name="text">
+               <string>sports_facility</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>athlete</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>competition_result</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>audit_log</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="loadTableButton">
+             <property name="text">
+              <string>📥 Загрузить</string>
+             </property>
+             <property name="cursor">
+              <cursorShape>PointingHandCursor</cursorShape>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="horizontalSpacer">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QTableView" name="tableView">
+          <property name="alternatingRowColors">
+           <bool>true</bool>
+          </property>
+          <property name="selectionBehavior">
+           <enum>QAbstractItemView::SelectRows</enum>
+          </property>
+          <property name="selectionMode">
+           <enum>QAbstractItemView::SingleSelection</enum>
+          </property>
+          <property name="showGrid">
+           <bool>true</bool>
+          </property>
+          <property name="gridStyle">
+           <enum>Qt::DotLine</enum>
+          </property>
+          <property name="sortingEnabled">
+           <bool>true</bool>
+          </property>
+          <property name="cornerButtonEnabled">
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="crudTab">
+       <attribute name="title">
+        <string>  ⚡ Операции с данными  </string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <item>
+         <widget class="QTabWidget" name="crudTabWidget">
+          <property name="currentIndex">
+           <number>0</number>
+          </property>
+          <property name="tabPosition">
+           <enum>QTabWidget::North</enum>
+          </property>
+          <property name="documentMode">
+           <bool>true</bool>
+          </property>
+          <property name="tabShape">
+           <enum>QTabWidget::Rounded</enum>
+          </property>
+          <widget class="QWidget" name="facilityTab">
+           <attribute name="title">
+            <string>  🏟️ Спортивные сооружения  </string>
+           </attribute>
+           <layout class="QVBoxLayout" name="verticalLayout_4">
+            <item>
+             <widget class="QGroupBox" name="groupBox_2">
+              <property name="title">
+               <string>Данные спортивного сооружения</string>
+              </property>
+              <layout class="QGridLayout" name="gridLayout">
+               <item row="0" column="0">
+                <widget class="QLabel" name="label_2">
+                 <property name="text">
+                  <string>🔑 ID:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="1">
+                <widget class="QLineEdit" name="facilityIdEdit">
+                 <property name="placeholderText">
+                  <string>Введите id</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <widget class="QLabel" name="label_3">
+                 <property name="text">
+                  <string>🏢 Название:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="1">
+                <widget class="QLineEdit" name="facilityNameEdit">
+                 <property name="placeholderText">
+                  <string>Введите название сооружения</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="0">
+                <widget class="QLabel" name="label_5">
+                 <property name="text">
+                  <string>📋 Тип:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="1">
+                <widget class="QComboBox" name="facilityTypeCombo">
+                 <item>
+                  <property name="text">
+                   <string>Hall</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Arena</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Stadium</string>
+                  </property>
+                 </item>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <widget class="QFrame" name="frame">
+              <property name="frameShape">
+               <enum>QFrame::StyledPanel</enum>
+              </property>
+              <property name="frameShadow">
+               <enum>QFrame::Raised</enum>
+              </property>
+              <layout class="QHBoxLayout" name="horizontalLayout_2">
+               <item>
+                <widget class="QPushButton" name="insertFacilityButton">
+                 <property name="text">
+                  <string>➕ Добавить</string>
+                 </property>
+                 <property name="cursor">
+                  <cursorShape>PointingHandCursor</cursorShape>
+                 </property>
+                 <property name="iconSize">
+                  <size>
+                   <width>16</width>
+                   <height>16</height>
+                  </size>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="updateFacilityButton">
+                 <property name="text">
+                  <string>✏️ Обновить</string>
+                 </property>
+                 <property name="cursor">
+                  <cursorShape>PointingHandCursor</cursorShape>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="deleteFacilityButton">
+                 <property name="text">
+                  <string>🗑️ Удалить</string>
+                 </property>
+                 <property name="cursor">
+                  <cursorShape>PointingHandCursor</cursorShape>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <spacer name="horizontalSpacer_2">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item>
+                <widget class="QPushButton" name="clearFacilityButton">
+                 <property name="text">
+                  <string>🧹 Очистить</string>
+                 </property>
+                 <property name="cursor">
+                  <cursorShape>PointingHandCursor</cursorShape>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="athleteTab">
+           <attribute name="title">
+            <string>  🏃‍ Спортсмены  </string>
+           </attribute>
+           <layout class="QVBoxLayout" name="verticalLayout_5">
+            <item>
+             <widget class="QGroupBox" name="groupBox_3">
+              <property name="title">
+               <string>Данные спортсмена</string>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_2">
+               <item row="0" column="0">
+                <widget class="QLabel" name="label_6">
+                 <property name="text">
+                  <string>🔑 ID:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="1">
+                <widget class="QLineEdit" name="athleteIdEdit">
+                 <property name="placeholderText">
+                  <string>Введите id</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <widget class="QLabel" name="label_7">
+                 <property name="text">
+                  <string>👤 Имя:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="1">
+                <widget class="QLineEdit" name="athleteFirstNameEdit">
+                 <property name="placeholderText">
+                  <string>Введите имя</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="0">
+                <widget class="QLabel" name="label_8">
+                 <property name="text">
+                  <string>👤 Фамилия:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="1">
+                <widget class="QLineEdit" name="athleteLastNameEdit">
+                 <property name="placeholderText">
+                  <string>Введите фамилию</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="0">
+                <widget class="QLabel" name="label_9">
+                 <property name="text">
+                  <string>🎂 Дата рождения:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="1">
+                <widget class="QLineEdit" name="athleteBirthEdit">
+                 <property name="placeholderText">
+                  <string>YYYY-MM-DD</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <widget class="QFrame" name="frame_2">
+              <property name="frameShape">
+               <enum>QFrame::StyledPanel</enum>
+              </property>
+              <property name="frameShadow">
+               <enum>QFrame::Raised</enum>
+              </property>
+              <layout class="QHBoxLayout" name="horizontalLayout_3">
+               <item>
+                <widget class="QPushButton" name="insertAthleteButton">
+                 <property name="text">
+                  <string>➕ Добавить</string>
+                 </property>
+                 <property name="cursor">
+                  <cursorShape>PointingHandCursor</cursorShape>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="updateAthleteButton">
+                 <property name="text">
+                  <string>✏️ Обновить</string>
+                 </property>
+                 <property name="cursor">
+                  <cursorShape>PointingHandCursor</cursorShape>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="deleteAthleteButton">
+                 <property name="text">
+                  <string>🗑️ Удалить</string>
+                 </property>
+                 <property name="cursor">
+                  <cursorShape>PointingHandCursor</cursorShape>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <spacer name="horizontalSpacer_3">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item>
+                <widget class="QPushButton" name="clearAthleteButton">
+                 <property name="text">
+                  <string>🧹 Очистить</string>
+                 </property>
+                 <property name="cursor">
+                  <cursorShape>PointingHandCursor</cursorShape>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="resultTab">
+           <attribute name="title">
+            <string>  🏆 Результаты соревнований  </string>
+           </attribute>
+           <layout class="QVBoxLayout" name="verticalLayout_6">
+            <item>
+             <widget class="QGroupBox" name="groupBox_4">
+              <property name="title">
+               <string>Данные результата</string>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_3">
+               <item row="0" column="0">
+                <widget class="QLabel" name="label_11">
+                 <property name="text">
+                  <string>🔑 ID результата:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="1">
+                <widget class="QLineEdit" name="resultIdEdit">
+                 <property name="placeholderText">
+                  <string>Введите id результата</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <widget class="QLabel" name="label_12">
+                 <property name="text">
+                  <string>🏃‍♂️ ID спортсмена:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="1">
+                <widget class="QLineEdit" name="resultAthleteIdEdit">
+                 <property name="placeholderText">
+                  <string>Введите ID спортсмена</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="0">
+                <widget class="QLabel" name="label_13">
+                 <property name="text">
+                  <string>🏟️ ID сооружения:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="1">
+                <widget class="QLineEdit" name="resultFacilityIdEdit">
+                 <property name="placeholderText">
+                  <string>Введите ID сооружения</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="0">
+                <widget class="QLabel" name="label_14">
+                 <property name="text">
+                  <string>🏆 Название соревнования:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="1">
+                <widget class="QLineEdit" name="resultCompetitionNameEdit">
+                 <property name="placeholderText">
+                  <string>Введите название соревнования</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="0">
+                <widget class="QLabel" name="label_15">
+                 <property name="text">
+                  <string>⚽ Вид спорта:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="1">
+                <widget class="QLineEdit" name="resultSportNameEdit">
+                 <property name="placeholderText">
+                  <string>Введите вид спорта</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="5" column="0">
+                <widget class="QLabel" name="label_16">
+                 <property name="text">
+                  <string>📅 Дата соревнования:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="5" column="1">
+                <widget class="QLineEdit" name="resultDateEdit">
+                 <property name="placeholderText">
+                  <string>YYYY-MM-DD</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="6" column="0">
+                <widget class="QLabel" name="label_17">
+                 <property name="text">
+                  <string>🥇 Место:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="6" column="1">
+                <widget class="QLineEdit" name="resultPlaceEdit">
+                 <property name="placeholderText">
+                  <string>Введите место (1-999)</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <widget class="QFrame" name="frame_3">
+              <property name="frameShape">
+               <enum>QFrame::StyledPanel</enum>
+              </property>
+              <property name="frameShadow">
+               <enum>QFrame::Raised</enum>
+              </property>
+              <layout class="QHBoxLayout" name="horizontalLayout_4">
+               <item>
+                <widget class="QPushButton" name="insertResultButton">
+                 <property name="text">
+                  <string>➕ Добавить</string>
+                 </property>
+                 <property name="cursor">
+                  <cursorShape>PointingHandCursor</cursorShape>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="updateResultButton">
+                 <property name="text">
+                  <string>✏️ Обновить</string>
+                 </property>
+                 <property name="cursor">
+                  <cursorShape>PointingHandCursor</cursorShape>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="deleteResultButton">
+                 <property name="text">
+                  <string>🗑️ Удалить</string>
+                 </property>
+                 <property name="cursor">
+                  <cursorShape>PointingHandCursor</cursorShape>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <spacer name="horizontalSpacer_4">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item>
+                <widget class="QPushButton" name="clearResultButton">
+                 <property name="text">
+                  <string>🧹 Очистить</string>
+                 </property>
+                 <property name="cursor">
+                  <cursorShape>PointingHandCursor</cursorShape>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="auditTab">
+       <attribute name="title">
+        <string>  📝 Лог операций  </string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_7">
+        <item>
+         <widget class="QGroupBox" name="groupBox_5">
+          <property name="title">
+           <string>Фильтры</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_4">
+           <item row="0" column="0">
+            <widget class="QLabel" name="label_18">
+             <property name="text">
+              <string>📅 С:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QLineEdit" name="startDateEdit">
+             <property name="placeholderText">
+              <string>YYYY-MM-DD</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="2">
+            <widget class="QLabel" name="label_19">
+             <property name="text">
+              <string>📅 По:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="3">
+            <widget class="QLineEdit" name="endDateEdit">
+             <property name="placeholderText">
+              <string>YYYY-MM-DD</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="label_20">
+             <property name="text">
+              <string>🔧 Тип операции:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QComboBox" name="operationTypeCombo">
+             <item>
+              <property name="text">
+               <string>Все</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>INSERT</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>UPDATE</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>DELETE</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item row="1" column="2">
+            <spacer name="horizontalSpacer_5">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item row="1" column="3">
+            <widget class="QPushButton" name="loadAuditButton">
+             <property name="text">
+              <string>📥 Загрузить лог</string>
+             </property>
+             <property name="cursor">
+              <cursorShape>PointingHandCursor</cursorShape>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QTableView" name="auditTableView">
+          <property name="alternatingRowColors">
+           <bool>true</bool>
+          </property>
+          <property name="selectionBehavior">
+           <enum>QAbstractItemView::SelectRows</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QFrame" name="frame_4">
+          <property name="frameShape">
+           <enum>QFrame::StyledPanel</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Raised</enum>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout_5">
+           <item>
+            <widget class="QLabel" name="label_21">
+             <property name="text">
+              <string>🔙 ID операции для отмены:</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="undoIdEdit">
+             <property name="placeholderText">
+              <string>Введите ID операции</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="undoButton">
+             <property name="text">
+              <string>↩️ Отменить операцию</string>
+             </property>
+             <property name="cursor">
+              <cursorShape>PointingHandCursor</cursorShape>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="reportTab">
+       <attribute name="title">
+        <string>  📊 Отчеты  </string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_8">
+        <item>
+         <widget class="QGroupBox" name="groupBox_6">
+          <property name="title">
+           <string>Сводный отчет по операциям</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_5">
+           <item row="0" column="0">
+            <widget class="QCheckBox" name="flag1CheckBox">
+             <property name="text">
+              <string>📝 Сортировать по названию сущности</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QCheckBox" name="flag2CheckBox">
+             <property name="text">
+              <string>🔧 Сортировать по типу операции</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="2">
+            <widget class="QCheckBox" name="flag3CheckBox">
+             <property name="text">
+              <string>📈 Сортировать по количеству операций</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0" colspan="3">
+            <widget class="QPushButton" name="generateReportButton">
+             <property name="text">
+              <string>📄 Сгенерировать отчет</string>
+             </property>
+             <property name="cursor">
+              <cursorShape>PointingHandCursor</cursorShape>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QTableView" name="reportTableView">
+          <property name="alternatingRowColors">
+           <bool>true</bool>
+          </property>
+          <property name="selectionBehavior">
+           <enum>QAbstractItemView::SelectRows</enum>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1400</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+     <weight>500</weight>
+    </font>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar">
+   <property name="font">
+    <font>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
